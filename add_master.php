@@ -1,0 +1,1 @@
+<a class="btn btn-secondary btn-lg" href="index.php?page=./master/brand_master" role="button">Add Brand</a>
