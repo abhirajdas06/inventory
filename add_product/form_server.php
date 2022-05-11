@@ -4,7 +4,7 @@ include "db_connection.php"?>
 <!-- form  -->
 <div class="container form-group">
     <form method="post" action="index.php?page=./function/add_server">
-        <input type="hidden" name="hdd_id">
+        <!-- <input type="hidden" name="hdd_id"> -->
         <!-- <input type="text" name="product" value="VRM" hidden> -->
         <div class="row">
             <!-- <div class="row"> -->
@@ -12,8 +12,18 @@ include "db_connection.php"?>
                 <label for="inputsubcategory">Select Product</label>
                 <select name="product" class="btn btn-default dropdown-toggle">
                     <option selected>Select Product </option>
+                    <option value = "RACK SERVER">RACK SERVER </option>
+                    <option value = "BLADE SERVER">BLADE SERVER </option>
+                    <option value = "STORAGE">STORAGE </option>
+                    <option value = "SUN SERVER">SUN SERVER </option>
+                    <option value = "IBM/ DELL/HP CHASIS">IBM/ DELL/HP CHASIS </option>
+                    <option value = "NETWORKING FIREWALL">NETWORKING FIREWALL </option>
+                    <option value = "NETWORKING MODEM / ROUTER">NETWORKING MODEM / ROUTER </option>
+                    <option value = "NETWORKING SWITCH">NETWORKING SWITCH </option>
+                    <option value = "CISCO CHASIS">CISCO CHASIS </option>
+                    <option value = "DESKTOP">DESKTOP </option>
 
-                    <option value="COOLING FAN">COOLING FAN </option>
+
 
                 </select>
             </div>
@@ -76,7 +86,7 @@ include "db_connection.php"?>
             </div>
             <div class="form-group col-md-3">
                 <label for="inputname">Alt Part No</label>
-                <input type="name" class="form-control" name="alt _part" placeholder="Enter Alt Part No">
+                <input type="name" class="form-control" name="alt_part" placeholder="Enter Alt Part No">
             </div>
             <div class="form-group col-md-3">
                 <label for="inputname">Serial No</label>
@@ -84,7 +94,7 @@ include "db_connection.php"?>
             </div>
             <div class="form-group col-md-3">
                 <label for="inputname">Alt Serial. no</label>
-                <input type="name" class="form-control" name="alt _serial" placeholder="Enter Alt Serial. no">
+                <input type="name" class="form-control" name="alt_serial" placeholder="Enter Alt Serial. no">
             </div>
             <div class="form-group col-md-3">
                 <label for="inputname">Specification</label>

@@ -4,7 +4,7 @@ include "db_connection.php"?>
 <!-- form  -->
 <div class="container form-group">
     <form method="post" action="index.php?page=./function/add_vrm">
-        <input type="hidden" name="hdd_id">
+        <!-- <input type="hidden" name="hdd_id"> -->
         <!-- <input type="text" name="product" value="VRM" hidden> -->
         <div class="row">
         <!-- <div class="row"> -->

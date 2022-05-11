@@ -6,38 +6,87 @@ if ($connection->connect_error) {
 
 }
 
-$product            =       $_POST['product'];
-$brand              =       $_POST['brand'];
-$oem                =       $_POST['oem'];
-$b_model_no         =       $_POST['b_model_no'];
-$o_model_no         =       $_POST['o_model_no'];
-$capacity           =       $_POST['capacity'];
-$rpm                =       $_POST['rpm'];
-$interface          =       $_POST['interface'];
-$part_no            =       $_POST['part_no'];
-$a_part_no          =       $_POST['a_part_no'];
-$a_part_no_1        =       $_POST['a_part_no_1'];
-$a_part_no_2        =       $_POST['a_part_no_2'];
-$a_part_no_3        =       $_POST['a_part_no_3'];
-$r_part_no          =       $_POST['r_part_no'];
-$spare_part_no      =       $_POST['spare_part_no'];
-$gpn_code           =       $_POST['gpn_code'];
-$b_serial_no        =       $_POST['b_serial_no'];
-$o_serial_no        =       $_POST['o_serial_no'];
-$serial_no          =       $_POST['serial_no'];
-$firmware           =       $_POST['firmware'];
-$size               =       $_POST['size'];
-$quantity           =       $_POST['quantity'];
-$gbps               =       $_POST['gbps'];
-$location           =       $_POST['location'];
-$barcode            =       $_POST['barcode'];
-$t_barcode          =       $_POST['t_barcode'];
-$ref_location       =       $_POST['ref_location'];
-$remark             =       $_POST['remark'];
-// $status             =       $_POST['status'];
+$product              =          $_POST['product'];
+$test_date            =          $_POST['test_date'];
+$test_by              =          $_POST['test_by'];
+$mach_type            =          $_POST['mach_type'];
+$mach_no              =          $_POST['mach_no'];
+$service_tag          =          $_POST['service_tag'];
+$model                =          $_POST['model'];
+$spar_type            =          $_POST['spar_type'];
+$part_no              =          $_POST['part_no'];
+$alt_part             =          $_POST['alt_part'];
+$seri_no              =          $_POST['seri_no'];
+$alt_serial           =          $_POST['alt_serial'];
+$specs                =          $_POST['specs'];
+$barc_no              =          $_POST['barc_no'];
+$qty                  =          $_POST['qty'];
+$work_not             =          $_POST['work_not'];
+$location             =          $_POST['location'];
+$refe_location        =          $_POST['refe_location'];
+$pare_child           =          $_POST['pare_child'];
+// $remark               =          $_POST['remark'];
 
-$sql = "INSERT INTO hdd(product,	brand,	oem,	b_model_no,	o_model_no,	capacity,	rpm,	interface,	part_no,	a_part_no,	a_part_no_1,	a_part_no_2,	a_part_no_3,	r_part_no,	spare_part_no,	gpn_code,	b_serial_no,	o_serial_no,	serial_no,	firmware,	size,	quantity,	gbps,	location,	barcode,	t_barcode,	ref_location,	remark)
-VALUES ('$product',	'$brand',	'$oem',	'$b_model_no',	'$o_model_no',	'$capacity',	'$rpm',	'$interface',	'$part_no',	'$a_part_no',	'$a_part_no_1',	'$a_part_no_2',	'$a_part_no_3',	'$r_part_no',	'$spare_part_no',	'$gpn_code',	'$b_serial_no',	'$o_serial_no',	'$serial_no',	'$firmware',	'$size',	'$quantity',	'$gbps',	'$location',	'$barcode',	'$t_barcode',	'$ref_location',	'$remark')";
+
+// Add RACK SERVER
+if ($product == "RACK SERVER") {
+  $sql = "INSERT INTO rack_server  (	test_date,	test_by,	mach_type,	mach_no,	service_tag,	model,	spar_type,	part_no,	alt_part,	seri_no,	alt_serial,	specs,	barc_no,	qty,	work_not,	location,	refe_location,	pare_child,	remark )
+VALUES ($test_date',	'$test_by',	'$mach_type',	'$mach_no',	'$service_tag',	'$model',	'$spar_type',	'$part_no',	'$alt_part',	'$seri_no',	'$alt_serial',	'$specs',	'$barc_no',	'$qty',	'$work_not',	'$location',	'$refe_location',	'$pare_child',	'$remark')";
+}
+
+// Add BLADE SERVER
+if ($product == "BLADE SERVER") {
+  $sql = "INSERT INTO blade_server  (	test_date,	test_by,	mach_type,	mach_no,	service_tag,	model,	spar_type,	part_no,	alt_part,	seri_no,	alt_serial,	specs,	barc_no,	qty,	work_not,	location,	refe_location,	pare_child,	remark )
+VALUES ($test_date',	'$test_by',	'$mach_type',	'$mach_no',	'$service_tag',	'$model',	'$spar_type',	'$part_no',	'$alt_part',	'$seri_no',	'$alt_serial',	'$specs',	'$barc_no',	'$qty',	'$work_not',	'$location',	'$refe_location',	'$pare_child',	'$remark')";
+}
+
+// Add STORAGE
+if ($product == "STORAGE") {
+  $sql = "INSERT INTO storage  (	test_date,	test_by,	mach_type,	mach_no,	service_tag,	model,	spar_type,	part_no,	alt_part,	seri_no,	alt_serial,	specs,	barc_no,	qty,	work_not,	location,	refe_location,	pare_child,	remark )
+VALUES ($test_date',	'$test_by',	'$mach_type',	'$mach_no',	'$service_tag',	'$model',	'$spar_type',	'$part_no',	'$alt_part',	'$seri_no',	'$alt_serial',	'$specs',	'$barc_no',	'$qty',	'$work_not',	'$location',	'$refe_location',	'$pare_child',	'$remark')";
+}
+
+// Add SUN SERVER
+if ($product == "SUN SERVER") {
+  $sql = "INSERT INTO sun_server  (	test_date,	test_by,	mach_type,	mach_no,	service_tag,	model,	spar_type,	part_no,	alt_part,	seri_no,	alt_serial,	specs,	barc_no,	qty,	work_not,	location,	refe_location,	pare_child,	remark )
+VALUES ($test_date',	'$test_by',	'$mach_type',	'$mach_no',	'$service_tag',	'$model',	'$spar_type',	'$part_no',	'$alt_part',	'$seri_no',	'$alt_serial',	'$specs',	'$barc_no',	'$qty',	'$work_not',	'$location',	'$refe_location',	'$pare_child',	'$remark')";
+}
+
+// Add IBM/ DELL/HP CHASIS
+if ($product == "IBM/ DELL/HP CHASIS") {
+  $sql = "INSERT INTO chasis  (	test_date,	test_by,	mach_type,	mach_no,	service_tag,	model,	spar_type,	part_no,	alt_part,	seri_no,	alt_serial,	specs,	barc_no,	qty,	work_not,	location,	refe_location,	pare_child,	remark )
+VALUES ($test_date',	'$test_by',	'$mach_type',	'$mach_no',	'$service_tag',	'$model',	'$spar_type',	'$part_no',	'$alt_part',	'$seri_no',	'$alt_serial',	'$specs',	'$barc_no',	'$qty',	'$work_not',	'$location',	'$refe_location',	'$pare_child',	'$remark')";
+}
+
+// Add NETWORKING FIREWALL
+if ($product == "NETWORKING FIREWALL") {
+  $sql = "INSERT INTO networking_firewall  (	test_date,	test_by,	mach_type,	mach_no,	service_tag,	model,	spar_type,	part_no,	alt_part,	seri_no,	alt_serial,	specs,	barc_no,	qty,	work_not,	location,	refe_location,	pare_child,	remark )
+VALUES ($test_date',	'$test_by',	'$mach_type',	'$mach_no',	'$service_tag',	'$model',	'$spar_type',	'$part_no',	'$alt_part',	'$seri_no',	'$alt_serial',	'$specs',	'$barc_no',	'$qty',	'$work_not',	'$location',	'$refe_location',	'$pare_child',	'$remark')";
+}
+
+// Add NETWORKING MODEM / ROUTER
+if ($product == "NETWORKING MODEM / ROUTER") {
+  $sql = "INSERT INTO networking_modem  (	test_date,	test_by,	mach_type,	mach_no,	service_tag,	model,	spar_type,	part_no,	alt_part,	seri_no,	alt_serial,	specs,	barc_no,	qty,	work_not,	location,	refe_location,	pare_child,	remark )
+VALUES ($test_date',	'$test_by',	'$mach_type',	'$mach_no',	'$service_tag',	'$model',	'$spar_type',	'$part_no',	'$alt_part',	'$seri_no',	'$alt_serial',	'$specs',	'$barc_no',	'$qty',	'$work_not',	'$location',	'$refe_location',	'$pare_child',	'$remark')";
+}
+
+// Add NETWORKING SWITCH
+if ($product == "NETWORKING SWITCH") {
+  $sql = "INSERT INTO networking_switch  (	test_date,	test_by,	mach_type,	mach_no,	service_tag,	model,	spar_type,	part_no,	alt_part,	seri_no,	alt_serial,	specs,	barc_no,	qty,	work_not,	location,	refe_location,	pare_child,	remark )
+VALUES ($test_date',	'$test_by',	'$mach_type',	'$mach_no',	'$service_tag',	'$model',	'$spar_type',	'$part_no',	'$alt_part',	'$seri_no',	'$alt_serial',	'$specs',	'$barc_no',	'$qty',	'$work_not',	'$location',	'$refe_location',	'$pare_child',	'$remark')";
+}
+
+// Add CISCO CHASIS
+if ($product == "CISCO CHASIS") {
+  $sql = "INSERT INTO cisco_chasis  (	test_date,	test_by,	mach_type,	mach_no,	service_tag,	model,	spar_type,	part_no,	alt_part,	seri_no,	alt_serial,	specs,	barc_no,	qty,	work_not,	location,	refe_location,	pare_child,	remark )
+VALUES ($test_date',	'$test_by',	'$mach_type',	'$mach_no',	'$service_tag',	'$model',	'$spar_type',	'$part_no',	'$alt_part',	'$seri_no',	'$alt_serial',	'$specs',	'$barc_no',	'$qty',	'$work_not',	'$location',	'$refe_location',	'$pare_child',	'$remark')";
+}
+
+// Add DESKTOP
+if ($product == "DESKTOP") {
+  $sql = "INSERT INTO desktop  (	test_date,	test_by,	mach_type,	mach_no,	service_tag,	model,	spar_type,	part_no,	alt_part,	seri_no,	alt_serial,	specs,	barc_no,	qty,	work_not,	location,	refe_location,	pare_child,	remark )
+VALUES ($test_date',	'$test_by',	'$mach_type',	'$mach_no',	'$service_tag',	'$model',	'$spar_type',	'$part_no',	'$alt_part',	'$seri_no',	'$alt_serial',	'$specs',	'$barc_no',	'$qty',	'$work_not',	'$location',	'$refe_location',	'$pare_child',	'$remark')";
+}
 
 
 if ($connection->query($sql) === TRUE) {
